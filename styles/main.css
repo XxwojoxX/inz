@@ -1,3 +1,28 @@
 body {
-    background-color: aqua;
+    background-color: #007e3d;
+}
+
+nav {
+    background-color: #0099CC;
+    width: 100%;
+    height: auto;
+}
+
+button {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.sidebar {
+    float: left;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+footer {
+    background-color: #8C5B2D;
+    clear: both;
 }
