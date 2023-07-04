@@ -77,3 +77,14 @@ nav button {
     opacity: 1;
     transform: translateY(0px);
   }
+
+  footer {
+    clear: both;
+    background-color: #0099;
+    width: 100%;
+  }
+
+  footer img {
+    width: 25px;
+    height: 25px;
+  }
