@@ -111,7 +111,7 @@
 				<div class="description">
 					<h3>Kontakt</h3>
 					<h3>krotki opis</h3>
-					<a href="#">Zobacz</a>
+					<a href="contact.html">Zobacz</a>
 				</div>
 			</div>
 		</div>
