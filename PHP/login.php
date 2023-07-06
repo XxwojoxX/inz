@@ -1,5 +1,4 @@
 <?php
-    session_start();
 
     require_once "connect.php";
 
@@ -12,7 +11,7 @@
     else
     {
         $login = $_POST['login'];
-        $haslo = $_POST['haslo'];
+        $haslo = $_POST['password'];
         $email = $_POST['email'];
 
         $sql = "SELECT * FROM users WHERE userName='$login' AND userPassword='$haslo' AND userPassword='$email'";
@@ -26,8 +25,8 @@
                 $_SESSION['zalogowany'] = true;
 
                 $row = $results -> fetch_assoc();
-                $_SESSION['userid'] = $row['userid'];
-                $_SESSION['username'] = $row['username'];
+                $_SESSION['userId'] = $row['userId'];
+                $_SESSION['userName'] = $row['userName'];
 
                 unset($_SESSION['blad']);
                 $results -> close();
@@ -35,8 +34,8 @@
             }
             else
             {
-                $_SESSION['blad'] = '<span style="color: red">nieprawidlowy login lub haslo</span>';
-                header('Location: ../formularz_logowanie.php');
+                $fail_login = '<span style="color: red">nieprawidlowy login lub haslo</span>';
+                header('Location: ../login_form.php');
                 $connect -> close();
             }
         }

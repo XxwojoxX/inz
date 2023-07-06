@@ -12,23 +12,23 @@
     <title>Document</title>
 </head>
 <body>
-    <form class="form">
+    <form class="form" action="PHP/login.php" method="POST" name="login_form">
         <p class="title">Login </p>
         <p class="message">Log in and get full access to our app. </p>
             <div class="flex">
             <label>
-                <input required="" placeholder="" type="login" class="input">
+                <input required="" placeholder="" type="text" class="input" name="login">
                 <span>username</span>
             </label>
     
             <label>
-                <input required="" placeholder="" type="password" class="input">
+                <input required="" placeholder="" type="password" class="input" name="password">
                 <span>password</span>
             </label>
         </div>  
                 
         <label>
-            <input required="" placeholder="" type="email" class="input">
+            <input required="" placeholder="" type="email" class="input" name="email">
             <span>Email</span>
         </label> 
 
