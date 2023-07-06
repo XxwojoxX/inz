@@ -17,18 +17,18 @@
         <p class="message">Log in and get full access to our app. </p>
             <div class="flex">
             <label>
-                <input required="" placeholder="" type="login" class="login">
+                <input required="" placeholder="" type="login" class="input">
                 <span>username</span>
             </label>
     
             <label>
-                <input required="" placeholder="" type="password" class="haslo">
+                <input required="" placeholder="" type="password" class="input">
                 <span>password</span>
             </label>
         </div>  
                 
         <label>
-            <input required="" placeholder="" type="email" class="email">
+            <input required="" placeholder="" type="email" class="input">
             <span>Email</span>
         </label> 
 
