@@ -9,6 +9,10 @@ body {
   background-color: #56ff2c;
 }
 
+.site-container {
+	padding-bottom: 80px;
+}
+
 .nav {
   background-color: rgb(81, 200, 255);
   width: 100%;
@@ -21,11 +25,67 @@ body {
   margin: 0.2%;
 }
 
-.clock {
-  font-size: 8vh;
-  text-align: center;
-  float: right;
+/*animacja przyciskow*/
+.nav-button {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
 }
+
+.nav-button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+.nav-button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.nav-button:hover {
+  background-color: var(--hover-color);
+}
+
+.nav-button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+.nav-button:hover .arrow:before {
+  right: 0;
+}
+/*koniec animacji przyciskow*/
 
 .section-container {
   margin-left: 5%;
@@ -127,78 +187,93 @@ body {
 
 footer {
   clear: both;
+  position: fixed;
+  bottom: 0;
   background-color: #0099;
   width: 100%;
   height: auto;
+  max-height: 45px;
   margin-top: 5vh;
+  padding-top: 7px;
 }
 
 footer img {
   width: 3%;
   height: 3%;
+  float: left;
+  margin-right: 15px;
 }
 
-/* Media queries dla urządzeń mobilnych */
-@media screen and (max-width: 768px) {
-  .section-container {
-    margin-left: 5%;
-    margin-right: 5%;
+/*animacja social media*/
+.card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.055);
+}
+
+/* for all social containers*/
+.socialContainer {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(44, 44, 44);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition-duration: .3s;
+}
+/* instagram*/
+.containerOne:hover {
+  background-color: #d62976;
+  transition-duration: .3s;
+}
+/* twitter*/
+.containerTwo:hover {
+  background-color: #00acee;
+  transition-duration: .3s;
+}
+/* linkdin*/
+.containerThree:hover {
+  background-color: #0072b1;
+  transition-duration: .3s;
+}
+/* Whatsapp*/
+.containerFour:hover {
+  background-color: #128C7E;
+  transition-duration: .3s;
+}
+
+.socialContainer:active {
+  transform: scale(0.9);
+  transition-duration: .3s;
+}
+
+.socialSvg {
+  width: 17px;
+}
+
+.socialSvg path {
+  fill: rgb(255, 255, 255);
+}
+
+.socialContainer:hover .socialSvg {
+  animation: slide-in-top 0.3s both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
   }
 
-  .ui-card {
-    width: 90%;
-    margin: 5% auto;
-  }
-
-  .ui-card .description h3 {
-    font-size: 1.6rem;
-    margin-bottom: 5px;
-  }
-
-  .ui-card .description p {
-    font-size: 1.2rem;
-  }
-
-  .ui-card .description a {
-    font-size: 1.2rem;
-    padding: 8px 20px;
-  }
-
-  footer {
-    margin-top: 10vh;
-  }
-
-  .clock {
-    font-size: 5vh;
-  }
-
-  .nav {
-    height: 6vh;
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
-/* Dostosowanie dla monitorów o szerokości powyżej 1440px */
-@media (min-width: 1441px) {
-  .section-container {
-    margin-left: 10%;
-    margin-right: 10%;
-  }
-
-  .ui-card {
-    width: 40%;
-    margin: 2%;
-  }
-
-  .ui-card .description h3 {
-    font-size: 1.8rem;
-  }
-
-  .ui-card .description p {
-    font-size: 1.4rem;
-  }
-
-  .ui-card .description a {
-    font-size: 1.6rem;
-    padding: 10px 25px;
-  }
-}

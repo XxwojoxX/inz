@@ -1,0 +1,73 @@
+/* Media queries dla urządzeń mobilnych */
+@media screen and (max-width: 768px) {
+    .section-container {
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  
+    .ui-card {
+      width: 90%;
+      margin: 5% auto;
+      margin-bottom: 20px;
+    }
+  
+    .ui-card .description h3 {
+      font-size: 1.6rem;
+      margin-bottom: 5px;
+    }
+  
+    .ui-card .description p {
+      font-size: 1.2rem;
+    }
+  
+    .ui-card .description a {
+      font-size: 1.2rem;
+      padding: 8px 20px;
+    }
+  
+    footer {
+      margin-top: 10vh;
+	  position: static;
+    }
+
+    footer img {
+        height: 10%;
+        width: 10%;
+        margin-right: 15px;
+    }
+  
+    .clock {
+      font-size: 5vh;
+    }
+  
+    .nav {
+      height: 6vh;
+    }
+  }
+  
+  /* Dostosowanie dla monitorów o szerokości powyżej 1440px */
+  @media (min-width: 1441px) {
+    .section-container {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+  
+    .ui-card {
+      width: 40%;
+      margin: 2%;
+    }
+  
+    .ui-card .description h3 {
+      font-size: 1.8rem;
+    }
+  
+    .ui-card .description p {
+      font-size: 1.4rem;
+    }
+  
+    .ui-card .description a {
+      font-size: 1.6rem;
+      padding: 10px 25px;
+    }
+  }
+  
