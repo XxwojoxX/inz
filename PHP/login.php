@@ -1,12 +1,13 @@
 <?php
+    session_start();
 
     require_once "connect.php";
 
-    $connect = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+    $connect = @new mysqli($db_host, $db_username, $db_password, $db_name);
 
-    if (!$connect)
+    if ($connect -> connect_errno != 0)
     {
-        die("Connection failed: " . mysqli_connect_error());
+        echo "error: ".$connect -> connect_errno;
     }
     else
     {
@@ -14,7 +15,7 @@
         $haslo = $_POST['password'];
         $email = $_POST['email'];
 
-        $sql = "SELECT * FROM users WHERE userName='$login' AND userPassword='$haslo' AND userPassword='$email'";
+        $sql = "SELECT * FROM users WHERE userName='$login' AND userPassword='$haslo' AND userEmail='$email'";
 
         if($results = $connect -> query($sql))
         {
@@ -28,18 +29,16 @@
                 $_SESSION['userId'] = $row['userId'];
                 $_SESSION['userName'] = $row['userName'];
 
-                unset($_SESSION['blad']);
                 $results -> close();
                 header('Location: ../index.php');
             }
             else
             {
-                $fail_login = '<span style="color: red">nieprawidlowy login lub haslo</span>';
+                $_SESSION['fail'] = '<span style="color: red">nieprawidlowy login lub haslo</span>';
                 header('Location: ../login_form.php');
                 $connect -> close();
             }
         }
-
         $connect -> close();
     }
 ?>

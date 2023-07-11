@@ -28,7 +28,7 @@
         </div>  
                 
         <label>
-            <input required="" placeholder="" type="email" class="input" name="email">
+            <input required="" placeholder="" type="text" class="input" name="email">
             <span>Email</span>
         </label> 
 
@@ -37,8 +37,10 @@
     </form>
 	
 	<?php
-		if(isset($_SESSION['blad']))
-		echo $_SESSION['blad'];
+		if(isset($_SESSION['fail']))
+        {
+            echo $_SESSION['fail'];
+        }
 	?>
 	
 </body>
