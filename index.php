@@ -22,16 +22,18 @@
 			if(isset($_SESSION['userName']))
 			{
 				$userName = $_SESSION['userName'];
-				echo '<a href="PHP/logout.php">
-					<button class="nav-button" id="nav-button">
-						Wyloguj
-						<div class="arrow-wraper">
-							<div class="arrow"></div>
-						</div>
-					</button>
-				</a>';
+				echo '<div>
+						<a href="PHP/logout.php">
+							<button class="nav-button" id="nav-button">
+								Wyloguj
+								<div class="arrow-wraper">
+									<div class="arrow"></div>
+								</div>
+							</button>
+						</a>
+					</div>';
 
-				echo '<div class="user" id="user"><h1>'.$userName.'</h1></div>';
+				echo '<h1>'.$userName.'</h1>';
 			}
 			else
 			{
